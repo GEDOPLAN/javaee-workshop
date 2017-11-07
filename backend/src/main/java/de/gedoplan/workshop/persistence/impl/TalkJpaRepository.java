@@ -4,11 +4,12 @@ import de.gedoplan.baselibs.persistence.repository.SingleIdEntityRepository;
 import de.gedoplan.workshop.domain.Talk;
 import de.gedoplan.workshop.persistence.TalkRepository;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.transaction.Transactional;
+import javax.ejb.Stateless;
 
-@ApplicationScoped
-@Transactional(rollbackOn = Exception.class)
+//@ApplicationScoped
+//@Transactional(rollbackOn = Exception.class)
+@Stateless
+// @TransactionAttribute
 public class TalkJpaRepository extends SingleIdEntityRepository<Integer, Talk> implements TalkRepository {
 
   // @PersistenceContext(unitName="hugo")
